@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Menu, Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core'
+import DeleteIcon from '@material-ui/icons/Delete'
 import { MoreVert } from '@material-ui/icons'
 
 const Import = (props) => {
@@ -21,11 +22,15 @@ const Import = (props) => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {props.makes.map((make) => (
+                    {props.makes.map((make, index) => (
                         <TableRow key={make.MakeId}>
                             <TableCell>{make["MakeId"]}</TableCell>
                             <TableCell>{make["MakeName"]}</TableCell>
-                            <TableCell><MoreVert></MoreVert></TableCell>
+                            <TableCell>
+                                <MoreVert></MoreVert>
+                                <DeleteIcon onClick={() => props.deleteMake(index)}
+                                    className="icon text-red" />
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
