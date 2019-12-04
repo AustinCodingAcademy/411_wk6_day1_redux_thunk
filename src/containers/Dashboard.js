@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 // add mapDispatchToProps function here
 const mapDispatchToProps = (dispatch) => {
     return {
-        removeCar: (index) => dispatch(removeCar(index))
+        removeCar: (index) => dispatch(removeCar(index)),
+        
     }
 }
 

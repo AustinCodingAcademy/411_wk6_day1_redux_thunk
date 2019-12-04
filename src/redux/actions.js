@@ -7,7 +7,7 @@ export const addCar = (car) => {
     }
 }
 
-export const removeCar = (index) => {
+export const deleteMake = (index) => {
     return {
         type: 'REMOVE_CAR',
         value: index
