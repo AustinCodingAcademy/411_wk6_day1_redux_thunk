@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Menu, Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core'
+import { Button, Container, IconButton, Menu, MenuItem, Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core'
 import DeleteIcon from '@material-ui/icons/Delete'
 import { MoreVert } from '@material-ui/icons'
 
@@ -31,6 +31,7 @@ const Import = (props) => {
                                 <MoreVert></MoreVert>
                                 <DeleteIcon onClick={() => props.deleteMake(index)}
                                     className="icon text-red" />
+                                {console.log(index)}
                             </TableCell>
                         </TableRow>
                     ))}
@@ -41,6 +42,3 @@ const Import = (props) => {
 }
 
 export default Import
-
-// delete icon
-// morevert is extra credit
