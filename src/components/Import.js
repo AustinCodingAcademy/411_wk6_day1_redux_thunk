@@ -1,6 +1,8 @@
-import React from "react";
-import Menu from "@material-ui/core/Menu";
-import IconButton from "@material-ui/icons/MoreVert";
+import React from 'react';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem'
+import IconButton from '@material-ui/core/IconButton'
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {
 	Button,
 	Table,
@@ -10,18 +12,18 @@ import {
 	TableCell
 } from "@material-ui/core";
 
-const ITEM_HEIGHT = 42;
-const Import = props => {
+const ITEM_HEIGHT = 52;
+const Import = (props) => {
 	// fill out this component
-	const [anchorEl, setanchorEl] = React.useState(null);
+	const [anchorEl, setAnchorEl] = React.useState(null);
 	const open = Boolean(anchorEl);
 
 	const handleClick = event => {
-		setanchorEl(event.currentTarget);
+		setAnchorEl(event.currentTarget);
 	};
 
 	const handleClose = () => {
-		setanchorEl(null);
+		setAnchorEl(null);
 	};
 
 	return (
@@ -49,15 +51,14 @@ const Import = props => {
 										aria-label="more"
 										aria-controls="long-menu"
 										aria-haspopup="true"
-										onClick={handleClick}
-									>
+										onClick={handleClick}>
 										<MoreVertIcon />
 									</IconButton>
 									<Menu
 										id="long-menu"
 										anchorEl={anchorEl}
 										keepMountedopen={open}
-										onClose={handClose}
+										onClose={handleClose}
 										PaperProps={{
 											style: {
 												maxHeight: ITEM_HEIGHT * 4.5,
@@ -77,4 +78,4 @@ const Import = props => {
 	);
 };
 
-export default Import;
+export default Import

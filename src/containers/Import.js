@@ -1,7 +1,7 @@
 // fill out this container
-import { connect } from 'rect-redux'
-import Import from '../component/Import'
-import {fetchMakes, deleteMake} from '../redux/actions'
+import { connect } from 'react-redux'
+import Import from '../components/Import'
+import { fetchMakes, deleteMake } from '../redux/actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -13,6 +13,8 @@ const mapDispatchToProps = (dispatch) => {
     console.log(fetchMakes)
     return {
         fetchMakes: () => dispatch(fetchMakes ()),
-        deleteMake: (index) => dispatch(fetchDelete ())
+        deleteMake: (index) => dispatch(deleteMake (index))
     }
-}z
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(Import)
