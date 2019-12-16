@@ -4,6 +4,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import IconButton from '@material-ui/core/IconButton'
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {
+	Container,
 	Button,
 	Table,
 	TableHead,
@@ -12,7 +13,7 @@ import {
 	TableCell
 } from "@material-ui/core";
 
-const ITEM_HEIGHT = 52;
+const ITEM_HEIGHT = 62;
 const Import = (props) => {
 	// fill out this component
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,30 +28,34 @@ const Import = (props) => {
 	};
 
 	return (
-		<div>
-			<p>Import Component</p>
-			<Button variant="contained" color="primary" onClick={props.fetchMakes}>
+		<Container>
+			<p></p>
+			<Button 
+					variant="contained" 
+					color="primary" 
+					onClick={props.fetchMakes}>
 				Import
 			</Button>
+			<h2>COUNT: {props.makes.length}</h2>
 			<Table>
 				<TableHead>
 					<TableRow>
-						<TableCell align="right">ID</TableCell>
-						<TableCell align="right">Make</TableCell>
-						<TableCell align="right">Actions</TableCell>
+						<TableCell align="center">ID</TableCell>
+						<TableCell align="center">Make</TableCell>
+						<TableCell align="center">Actions</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{props.makes.map((make, index) => {
 						return (
 							<TableRow key={make.MakeID}>
-								<TableCell align="right">{make.MakeID}</TableCell>
-								<TableCell align="right">{make.MakeName}</TableCell>
-								<TableCell align="right">
+								<TableCell align="center">{make.MakeID}</TableCell>
+								<TableCell align="center">{make.MakeName}</TableCell>
+								<TableCell align="center">
 									<IconButton
-										aria-label="more"
-										aria-controls="long-menu"
-										aria-haspopup="true"
+										helvetica-label="more"
+										helvetica-controls="long-menu"
+										helvetica-haspopup="true"
 										onClick={handleClick}>
 										<MoreVertIcon />
 									</IconButton>
@@ -74,7 +79,7 @@ const Import = (props) => {
 					})}
 				</TableBody>
 			</Table>
-		</div>
+		</Container>
 	);
 };
 
