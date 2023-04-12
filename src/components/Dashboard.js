@@ -34,22 +34,23 @@ const Dashboard = (props) => {
                 </TableHead>
                 <TableBody>
                 {props.cars.map((car, idx) => (
-                    <TableRow key={car.id}>
-                        <TableCell component="th" scope="row">
-                            {car.id}
-                        </TableCell>
-                        <TableCell>{car["name"]}</TableCell>
-                        <TableCell>{car["mpg"]}</TableCell>
-                        <TableCell>{car["cylinders"]}</TableCell>
-                        <TableCell>{car["horsepower"]}</TableCell>
-                        <TableCell>
-                            <DeleteIcon
-                                // add onClick method here
-                                onClick={() => props.removeCar(idx)}
-                                className="icon text-red" />
-                        </TableCell>
-                    </TableRow>
-                ))}
+                        <TableRow key={car.id}>
+                            <TableCell component="th" scope="row">
+                                {car.id}
+                            </TableCell>
+                            <TableCell>{car['name']}</TableCell>
+                            <TableCell>{car['mpg']}</TableCell>
+                            <TableCell>{car['cylinders']}</TableCell>
+                            <TableCell>{car['horsepower']}</TableCell>
+                            <TableCell>
+                                <DeleteIcon
+                                    // add onClick method here
+                                    onClick={() => props.removeCar(idx)}
+                                    className="icon text-red"
+                                />
+                            </TableCell>
+                        </TableRow>
+                    ))}
                 </TableBody>
             </Table>
         </Container>
