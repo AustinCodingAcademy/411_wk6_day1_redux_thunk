@@ -13,3 +13,16 @@ export const removeCar = (index) => {
         value: index
     }
 }
+
+export const fetchMakes = () => {
+    return (dispatch) => {
+        fetch('https://vpic.nhtsa.dot.gov/api/vehicles/getallmakes?format=json')
+            .then(response => response.json())
+            .then(json => {
+                dispatch({
+                    type: 'FETCH_MAKES',
+                    value: response..Results
+                })
+            })
+    }
+}
